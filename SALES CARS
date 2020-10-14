@@ -1,0 +1,85 @@
+
+package ejerciciosjava;
+
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ *
+ * Programa de ventas de vehículos en Java.
+ *
+ * @author ULYSESX12.
+ *
+ *
+ */
+public class EJERCICIO3 {
+
+    /**
+     * @param args Muestra por pantalla el valor total del vehiculo sumando una
+     * comision por venta  de 150.
+     *
+     *
+     *
+     * @since 11/10/2020.
+     */
+    public static void main(String[] args) {
+
+        String nombre, clave, password, opcion = null;
+
+        int valor, totalcoche, bono;
+
+        password = "CONTRASEÑA";
+
+        clave = "";
+
+        Scanner entrada = new Scanner(System.in);
+        Scanner entrada2 = new Scanner(System.in);
+
+        nombre = JOptionPane.showInputDialog("**********BIENVENIDO/A AL PROGRAMA,POR FAVOR TECLEE NOMBRE VENDEDOR PARA INICIAR: *********");
+
+        System.out.println("BIENVENIDO/A! " + nombre);
+
+        clave = JOptionPane.showInputDialog("INTRODUZCA LA CONTRASEÑA: ");
+
+        while (clave.equalsIgnoreCase(password) == false) {
+
+            System.out.println("CLAVE INCORRECTA.ACCESO DENEGADO.");
+
+            clave = JOptionPane.showInputDialog("INTRODUZCA LA CONTRASEÑA: ");
+
+            if (clave == password) {
+                System.out.println("CLAVE CORRECTA.ACCESO CONCEDIDO.");
+            }
+        }
+
+        System.out.println("*******¿DESEA INICIAR EL PROGRAMA DE VENTAS?****** \n"
+                + "S:SI   N:NO");
+
+        opcion = entrada.nextLine();
+
+        while (opcion.equalsIgnoreCase("s")) {
+
+            System.out.println("INTRODUZCA EL VALOR DEL VEHÍCULO: ");
+
+            valor = entrada.nextInt();
+
+            bono = valor + 150;
+
+            totalcoche = bono;
+
+            System.out.println("EL VALOR TOTAL ES DE: " + totalcoche + ("€"));
+
+            System.out.println(" ¿DESEA INTRODUCIR MÁS DATOS? \n  S:SI   N:NO");
+
+            opcion = entrada2.nextLine();
+
+        }
+        System.out.println("SALIENDO DEL PROGRAMA...\n"
+                + "GRACIAS Y HASTA PRONTO! ");
+
+    }
+
+}
+
+
